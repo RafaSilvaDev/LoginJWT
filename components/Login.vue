@@ -10,6 +10,7 @@
 
       <button type="submit">Acessar</button>
     </form>
+    <button @click="teste">teste</button>
   </div>
 </template>
 
@@ -31,12 +32,25 @@ export default {
       this.$auth
         .loginWith("local", { data: this.login })
         .then(() => {
-          console.log("login autenticado com sucesso");
+          alert("login autenticado com sucesso");
+          // this.$router.push("http://localhost:3000/home");
         })
         .catch((error) => {
-          console.log("login falhou");
+          alert("login falhou");
           console.log(error);
         });
+    },
+    teste() {
+      // .$get("https://swapi.dev/api/people/1/")
+      
+      this.$axios
+      .$get("http://localhost:8000/users")
+      .then((response) => {
+        
+        console.log("responses:", response);
+      });
+
+
     },
   },
 };

@@ -62,8 +62,9 @@ export default {
                     method: 'post',
                     propertyName: 'auth_token',
                 },
+                
                 user: {
-                    url: 'http://127.0.0.1:8000/home/',
+                    url: 'http://127.0.0.1:8000/users',
                     method: 'get',
                     propertyName: false,
                 }
